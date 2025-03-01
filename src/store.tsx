@@ -91,7 +91,6 @@ export const get_demo_data = () => {
       "Github Action mdi:github",
       "Gitlab CI/CD vscode-icons:file-type-gitlab",
       "Codeberg CI/CD simple-icons:codeberg",
-      ,
     ],
 
     interests: [
