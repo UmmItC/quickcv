@@ -1,0 +1,40 @@
+name: CI/CD static site with Yarn
+on: [push]
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Yarn deploy 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Node.js version
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      # Yarn install action
+      - name: Run install
+        uses: borales/actions-yarn@v5.0.0
+        with:
+          cmd: install
+      
+      # Yarn build action
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+
+      # Upload artifact action
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      # Deploy action
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
