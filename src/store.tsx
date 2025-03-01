@@ -28,80 +28,128 @@ export const get_default_data = () => {
 
 export const get_demo_data = () => {
   return {
-    "full name": "sidhanth rathod",
-    designation: "frontend web developer",
-    phone: "+91 9701611257",
-    "email address": "siduck@tutanota.com",
-    "github username": "siduck",
+    "full name": "UmmItC Leon",
+    designation: "Self-Taught Individual, Striving To Become A Professional Hacker. Also, A Technical Blogger.",
+    phone: "+852 12345678",
+    "email address": "hi.job [at] ummit.dev",
+    "github username": "UmmItC",
+    address: "Hong Kong",
     profile:
-      "I'm a Frontend Web developer and an open source & linux enthusiast. I use Gnu / Artix linux and I maintain several open source projects at github. I'm looking forward to get a junior frontend web developer's position at a reputed corporation / startup and building user friendly & responsive interfaces with Reactjs.",
+      "With over 6 years of enjoying self-directed learning, I am a passionate developer focused on GNU/Linux and open-source projects, as well as a CTF player and cybersecurity enthusiast.",
     "website": "https://links.ummit.dev",
-    "gpg key": "https://links.ummit.dev/info/UmmItC.gpg",
+    "gpg key": "https://links.ummit.dev/info/UmmIt.gpg",
 
     education: [
       {
-        institution: "Sarada College of Hotel Management",
-        qualification: "bhmct degree (discontinued)",
-        time: "2019-2022",
-      },
-      {
-        institution: "sri chaitainya junior college",
-        qualification: "intermediate (11-12th grade)",
-        time: "2017-2019",
-      },
-      {
-        institution: "sister nividita school",
-        qualification: "10th grade (SSC)",
-        time: "2017",
+        institution: "College Student in Hong Kong",
+        qualification: "I'm Cyber Security Major",
+        time: "Sep 2024 - Present",
       },
     ],
 
     "work experience": [
       {
-        company: "jamesmccallumconsulting",
-        position: "Remote frontend react developer (freelancing)",
-        time: "2022 Oct - 2023 Jan",
+        company: "Free and Open Source Community",
+        position: "Contributor some projects and maintain my own projects, See my github/gitlab/codeberg",
+        time: "2020 - Present",
       },
     ],
 
     skills: [
-      "html skill-icons:html",
-      "css skill-icons:css",
-      "javascript skill-icons:javascript",
-      "typescript skill-icons:typescript",
+      "GNU/Linux devicon:linux",
+      "Bash script logos:bash-icon",
+      "Python logos:python",
+      "C++ skill-icons:cpp",
+      "PHP skill-icons:php-dark",
+      "Lua catppuccin:lua",
+
+      "HTML skill-icons:html",
+      "CSS skill-icons:css",
+      "Javascript skill-icons:javascript",
+      "tailwind CSS logos:tailwindcss-icon",
+      "Daisy UI logos:daisyui-icon",
       "react logos:react",
-      "tailwind css logos:tailwindcss-icon",
-      "unocss simple-icons:unocss",
-      "solid JS logos:solidjs-icon",
+      
+      "Git devicon:git",
+           
+      "Vim devicon:vim",
+      "Neovim devicon:neovim",
+      "Hugo devicon:hugo",
+
+      "Markdown skill-icons:markdown-dark",
+      "YAML devicon:yaml",
+      "Telegram Bot logos:telegram",
+      "Discord Bot skill-icons:discord",
+
+      "Cloudflare devicon:cloudflare",
+      "DigitalOcean logos:digital-ocean-icon",
+      "AWS Lightsail logos:aws-lightsail",
+
+      "Nginx skill-icons:nginx",
+      "Vite logos:vitejs",
+
+      "Github Action mdi:github",
+      "Gitlab CI/CD vscode-icons:file-type-gitlab",
+      "Codeberg CI/CD simple-icons:codeberg",
+      ,
     ],
 
     interests: [
-      "tweaking neovim skill-icons:neovim-dark",
-      "Gnu / artix linux simple-icons:artixlinux",
-      "lua scripting file-icons:lua",
-      "Ricing linux bi:palette2",
-      "shell scripting file-icons:terminal",
+      "Tweaking GNU/Linux, Kernel devicon:linux",
+      "Manage GNU/Linux Servers devicon:linux",
+      "Capture The Flag noto-v1:black-flag",
+      "Penetration Testing devicon:kalilinux",
+      "Arch linux devicon:archlinux",
+      "Gentoo devicon:gentoo",
+      "Debian devicon:debian",
+      "Raspberry Pi devicon:raspberrypi",
+      "NixOS catppuccin:nix",
+      "Web Development icon-park:add-web",
+      "Write Technical Articles ph:article-medium-bold",
+      "Rust programming skill-icons:rust",
+      "Self-hosting server catppuccin:serverless",
     ],
 
     oss: [
       {
-        "project name": "nvchad",
+        "project name": "Dotfiles",
         description:
-          "A Neovim config framework with blazing fast startuptime & beautiful UI providing solid defaults coming with many lua plugins specifically written for it. NvChad currently has more than 13,900+ stars on github, it's the most popular neovim only distro.",
-        languages: "lua ",
+          "A collection of configuration files for my daily setup.",
+        languages: "Bash script, CSS, Lua, Python",
       },
       {
-        "project name": "quick Cv",
+        "project name": "Blog",
         description:
-          "Quick resume / cv builder for making beautiful resumes & supports exporting to high quality svgs & pdfs. This resume is generated by quickcv web app.",
-        languages: "typescript, solidJs, unocss, vite",
+          "A blog used for sharing my notes. with hugo and tailwind css.",
+        languages: "HTML, CSS, Javascript, Hugo, Tailwind CSS, Go, YAML",
       },
       {
-        "project name": "pomoz",
+        "project name": "GPU-Passthru",
         description:
-          "Minimal pomodoro timer & todolist creator web app to track progress of your productiveness.",
-        languages: "javascript, solidJs, css ",
+          "A Docs page with guidelines for configuring GPU passthrough.",
+        languages: "Typescript, Docusaurus, CSS, YAML",
       },
+
+      {
+        "project name": "Links",
+        description:
+          "A Linktree-like website for my social links and web-related projects URLs.",
+        languages: "HTML, CSS, Javascript, Tailwind CSS, Daisy UI, YAML",
+      },
+
+      {
+        "project name": "neo2ify",
+        description:
+          "A tool for converting formats into Droid-ify for ready use.",
+        languages: "Python",
+      },
+
+      {
+        "project name": "Idoit Linux",
+        description:
+          "An Arch Linux-based distro for my own dotfiles.",
+        languages: "Bash script, Makefile",
+      }
     ],
   };
 };
