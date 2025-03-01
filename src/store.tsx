@@ -8,6 +8,8 @@ export const get_default_data = () => {
     address: "",
     "email address": "",
     "github username": "",
+    "website": "",
+    "gpg key": "",
     profile: "",
 
     education: [
@@ -33,6 +35,8 @@ export const get_demo_data = () => {
     "github username": "siduck",
     profile:
       "I'm a Frontend Web developer and an open source & linux enthusiast. I use Gnu / Artix linux and I maintain several open source projects at github. I'm looking forward to get a junior frontend web developer's position at a reputed corporation / startup and building user friendly & responsive interfaces with Reactjs.",
+    "website": "https://links.ummit.dev",
+    "gpg key": "https://links.ummit.dev/info/UmmItC.gpg",
 
     education: [
       {

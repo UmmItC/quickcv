@@ -129,6 +129,20 @@ const PersonalDetails = () => (
         </span>
         @{store["github username"]}
       </div>
+
+      <div vertCentered>
+        <span font-semibold vertCentered>
+          <Icon icon="logos:web-dev-icon" width="20" /> Website :
+        </span>
+        {store.website}
+      </div>
+
+      <div vertCentered>
+        <span font-semibold vertCentered>
+          <Icon icon="vscode-icons:file-type-gpg" width="20" /> GPG Key :
+        </span>
+        {store["gpg key"]}
+      </div>
     </div>
   </div>
 );

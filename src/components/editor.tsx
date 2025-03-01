@@ -11,6 +11,8 @@ const PersonalDetails = () => {
     { name: "address" },
     { name: "email address" },
     { name: "github username" },
+    { name: "website"},
+    { name: "gpg key"},
   ];
 
   return (
