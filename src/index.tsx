@@ -6,7 +6,7 @@ import App from "./components/App";
 
 // set site theme
 const el = document.querySelector("html")!;
-el.className = localStorage.theme || "light";
+el.className = localStorage.theme || "dark";
 
 // render app
 const root = document.getElementById("app");

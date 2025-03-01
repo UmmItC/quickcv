@@ -7,7 +7,7 @@ export const [selectedFormat, setFormat] = createSignal("PNG");
 export const [loaderIconSet, setLoaderIcon] = createSignal(false);
 
 const Navbar = () => {
-  const [theme, setTheme] = createSignal(localStorage.theme || "light");
+  const [theme, setTheme] = createSignal(localStorage.theme || "dark");
 
   return (
     <div
