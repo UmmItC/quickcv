@@ -1,40 +1,27 @@
 import { Icon } from "@iconify-icon/solid";
-import { createSignal } from "solid-js";
 import { store } from "../store/index";
-import type { Theme } from "../types";
 
-const [theme] = createSignal<Theme>(
-  (localStorage.theme as Theme) || "dark"
-);
-
-const isDarkTheme = () => theme() === "dark";
-const getCurrentTheme = () => theme();
-
-const Name = () => (
-  <div class="text-center mb-6">
-
-    <div class="border-slate-3 border-solid border-1 border-slate-2 dark:border-slate-7 mb-10"></div>
-    
-    <div class="flex gap-3 justify-center items-baseline mb-2">
-      <h1 class="text-4xl font-light !m-0 text-white dark:text-white">
-        {store.personalDetails.fullName.split(" ")[0]}
-      </h1>
-      <h1 class="text-4xl font-light !m-0 text-blue-600 dark:text-blue-400">
-        {store.personalDetails.fullName.split(" ")[1]}
-      </h1>
+const Name = () => {
+  const nameParts = store.personalDetails.fullName.trim().split(" ");
+  const firstName = nameParts[0];
+  const lastName = nameParts.slice(1).join(" ");
+  return (
+    <div class="text-center mb-6">
+      <div class="border-slate-3 border-solid border-1 border-slate-2 dark:border-slate-7 mb-10"></div>
+      <div class="flex gap-3 justify-center items-baseline mb-2">
+        <h1 class="text-4xl font-light !m-0 text-white dark:text-white">{firstName}</h1>
+        {lastName && (
+          <h1 class="text-4xl font-light !m-0 text-blue-600 dark:text-blue-400">{lastName}</h1>
+        )}
+      </div>
+      <p class="text-lg text-slate-600 dark:text-slate-400 !m-0 font-light">
+        {store.personalDetails.designation}
+      </p>
+      <div class="border-slate-3 border-solid border-1 border-slate-2 dark:border-slate-7 mt-10"></div>
+      <p class="text-xs text-slate-500 mt-2"></p>
     </div>
-    
-    <p class="text-lg text-slate-600 dark:text-slate-400 !m-0 font-light">
-      {store.personalDetails.designation}
-    </p>
-    
-    <div class="border-slate-3 border-solid border-1 border-slate-2 dark:border-slate-7 mt-10"></div>
-    
-    <p class="text-xs text-slate-500 mt-2">
-      {/* Current theme: {getCurrentTheme()} | Is dark: {isDarkTheme() ? "Yes" : "No"} */}
-    </p>
-  </div>
-);
+  );
+};
 
 const Section = ({ title, icon, iconColor, children }: {
   title: string;
