@@ -15,9 +15,15 @@ const Name = () => (
 
     <div class="border-slate-3 border-solid border-1 border-slate-2 dark:border-slate-7 mb-10"></div>
     
-    <h1 class="text-4xl font-light !m-0 text-white mb-2">
-      {store.personalDetails.fullName}
-    </h1>
+    <div class="flex gap-3 justify-center items-baseline mb-2">
+      <h1 class="text-4xl font-light !m-0 text-white dark:text-white">
+        {store.personalDetails.fullName.split(" ")[0]}
+      </h1>
+      <h1 class="text-4xl font-light !m-0 text-blue-600 dark:text-blue-400">
+        {store.personalDetails.fullName.split(" ")[1]}
+      </h1>
+    </div>
+    
     <p class="text-lg text-slate-600 dark:text-slate-400 !m-0 font-light">
       {store.personalDetails.designation}
     </p>
