@@ -21,6 +21,9 @@ const getDefaultData = (): CVData => ({
   ],
   skills: [""],
   interests: [""],
+  certifications: [
+    { name: "", issuer: "", date: "", credentialId: "" },
+  ],
   oss: [{ projectName: "", description: "", languages: "" }],
 });
 
@@ -29,9 +32,9 @@ const getDemoData = (): CVData => ({
     fullName: "Leon Kennedy",
     designation: "Self-Taught Individual, Striving to become a professional hacker.",
     phone: "+852 12345678",
-    emailAddress: "hi.job [at] ummit.dev",
+    emailAddress: "me [at] ummit.dev",
     githubUsername: "UmmItC",
-    address: "Hong Kong",
+    address: "Hong Kong, Wan Chai",
     profile: "With over 6 years of enjoying self-directed learning, I am a passionate developer focused on GNU/Linux and open-source projects, as well as a CTF player and cybersecurity enthusiast.",
     website: "https://links.ummit.dev",
     gpgKey: "https://links.ummit.dev/info/UmmIt.gpg",
@@ -46,7 +49,7 @@ const getDemoData = (): CVData => ({
   workExperience: [
     {
       company: "Free and Open Source Community",
-      position: "Contributor some projects and maintain my own projects, See my github/gitlab/codeberg",
+      position: "When possible, i contribute to some of my favorite project made a merge request.",
       time: "2020 - Present",
     },
   ],
@@ -76,40 +79,44 @@ const getDemoData = (): CVData => ({
     "Capture The Flag noto-v1:black-flag",
     "Penetration Testing devicon:kalilinux",
     "Arch linux devicon:archlinux",
-    "Blogging ph:article-medium-bold",
-    "Self-hosting catppuccin:serverless",
+  ],
+  certifications: [
+    {
+      name: "OffSec Certified Professional (OSCP)",
+      issuer: "OffSec",
+      date: "2025-03-19",
+      credentialId: "OS-12345",
+    },
+    {
+      name: "OffSec Wireless Professional (OSWP)",
+      issuer: "OffSec",
+      date: "2025-03-20",
+      credentialId: "OS-12345",
+    },
+    {
+      name: "HTB Certified Penetration Testing Specialist (HTB CPTS)",
+      issuer: "HackTheBox",
+      date: "2025-03-21",
+      credentialId: "HTB-12345",
+    },
+    {
+      name: "CompTIA PenTest+",
+      issuer: "CompTIA",
+      date: "2025-03-22",
+      credentialId: "CPT-12345",
+    }
   ],
   oss: [
     {
-      projectName: "Dotfiles",
-      description: "A collection of configuration files for my daily setup.",
-      languages: "Bash script, CSS, Lua, Python",
-    },
-    {
-      projectName: "Blog",
-      description: "A blog used for sharing my notes. with hugo and tailwind css.",
-      languages: "HTML, CSS, Javascript, Hugo, Tailwind CSS, Go, YAML",
-    },
-    {
-      projectName: "GPU-Passthru",
-      description: "A Docs page with guidelines for configuring GPU passthrough.",
-      languages: "Typescript, Docusaurus, CSS, YAML",
+      projectName: "UmmItOS",
+      description: "An Arch Linux-based distro for my own dotfiles.",
+      languages: "Bash script, Makefile",
     },
     {
       projectName: "Links",
       description: "A Linktree-like website for my social links and web-related projects URLs.",
       languages: "HTML, CSS, Javascript, Tailwind CSS, Daisy UI, YAML",
     },
-    {
-      projectName: "neo2ify",
-      description: "A tool for converting formats into Droid-ify for ready use.",
-      languages: "Python",
-    },
-    {
-      projectName: "UmmItOS",
-      description: "An Arch Linux-based distro for my own dotfiles.",
-      languages: "Bash script, Makefile",
-    }
   ],
 });
 

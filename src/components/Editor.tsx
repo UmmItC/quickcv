@@ -1,7 +1,7 @@
 import { For } from "solid-js";
 import { Icon } from "@iconify-icon/solid";
 import { store, setStore } from "../store/index";
-import type { OSSProject } from "../types";
+import type { OSSProject, CertificationItem } from "../types";
 
 const PersonalDetailsSection = () => {
   const placeholders = [
@@ -156,6 +156,72 @@ const WorkExperienceSection = () => {
   );
 };
 
+const CertificationsSection = () => {
+  const handleAdd = () => {
+    setStore("certifications", [...store.certifications, {
+      name: "",
+      issuer: "",
+      date: "",
+      credentialId: "",
+    }]);
+  };
+
+  const handleRemove = (index: number) => {
+    setStore("certifications", store.certifications.filter((_, i) => i !== index));
+  };
+
+  const handleUpdate = (index: number, key: string, value: string) => {
+    setStore("certifications", index, key as keyof CertificationItem, value);
+  };
+
+  return (
+    <div>
+      <h3 class="capitalize">Certifications</h3>
+
+      <div class="grid gap-4">
+        <For each={store.certifications}>
+          {(obj, index) => (
+            <div class="flex flex-col gap-3 md:flex-row md:items-end">
+              <div class="flex flex-col gap-3 flex-1 md:flex-row">
+                {Object.entries(obj).map(([key, value]) => (
+                  <input
+                    class="flex-1"
+                    placeholder={
+                      key === "name" ? "Certification Name" :
+                      key === "issuer" ? "Issuing Organization" :
+                      key === "date" ? "Date Obtained" :
+                      key === "credentialId" ? "Credential ID (Optional)" :
+                      key.charAt(0).toUpperCase() + key.slice(1)
+                    }
+                    value={value as string}
+                    onchange={(e) => handleUpdate(index(), key, e.target.value)}
+                  />
+                ))}
+              </div>
+
+              <button
+                aria-label="delete input"
+                class="!bg-red-5 hover:!bg-red-6 !text-white-1 !p-2 !rounded-full flex-shrink-0"
+                onclick={() => handleRemove(index())}
+              >
+                <Icon icon="ion:close-circle" class="text-lg" />
+              </button>
+            </div>
+          )}
+        </For>
+      </div>
+
+      <button
+        class="!bg-blue-6 hover:!bg-blue-7 mt-4 mx-auto !text-white-1 flex items-center gap-2 px-4 py-2"
+        onclick={handleAdd}
+      >
+        <Icon icon="ic:round-add-circle" class="text-lg" />
+        Add Certification
+      </button>
+    </div>
+  );
+};
+
 const SkillsInterestsSection = (props: { sectionType: 'skills' | 'interests'; title: string }) => {
   const { sectionType, title } = props;
 
@@ -282,6 +348,7 @@ const Editor = () => {
       <AboutSection />
       <EducationSection />
       <WorkExperienceSection />
+      <CertificationsSection />
       <SkillsInterestsSection sectionType="skills" title="Skills" />
       <SkillsInterestsSection sectionType="interests" title="Interests" />
       <OSSSection />

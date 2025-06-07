@@ -217,6 +217,33 @@ const Interests = () => (
   </Section>
 );
 
+const Certifications = () => (
+  <Section 
+    title="Certifications" 
+    icon="mdi:certificate" 
+    iconColor="text-yellow-500 dark:text-yellow-400"
+  >
+    <div class="space-y-3">
+      {store.certifications.map((cert) => (
+        <div class="border border-slate-300 dark:border-slate-700 rounded-lg p-3 bg-slate-50 dark:bg-slate-800/50">
+          <div class="flex justify-between items-start mb-1">
+            <h4 class="text-white font-semibold !m-0 text-base">{cert.name}</h4>
+            <span class="text-xs bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-1 rounded">
+              {cert.date}
+            </span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm !m-0 mb-1">{cert.issuer}</p>
+          {cert.credentialId && (
+            <p class="text-slate-500 dark:text-slate-500 text-xs !m-0">
+              ID: {cert.credentialId}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  </Section>
+);
+
 const OSS = () => (
   <Section 
     title="Open Source Projects" 
@@ -252,6 +279,7 @@ const Viewer = () => {
           <About />
           <Education />
           <WorkExp />
+          <Certifications />
           <OSS />
         </div>
         

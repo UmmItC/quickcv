@@ -22,6 +22,13 @@ export interface WorkExperienceItem {
   time: string;
 }
 
+export interface CertificationItem {
+  name: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+}
+
 export interface OSSProject {
   projectName: string;
   description: string;
@@ -34,6 +41,7 @@ export interface CVData {
   workExperience: WorkExperienceItem[];
   skills: string[];
   interests: string[];
+  certifications: CertificationItem[];
   oss: OSSProject[];
 }
 
