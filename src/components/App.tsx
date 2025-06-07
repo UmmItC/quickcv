@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import ModeSwitcher, { isEditorMode } from "./ModeSwitcher";
 import Editor from "./Editor";
 import Viewer from "./Viewer";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
           <Editor />
         </Show>
       </div>
+
+      <Footer />
     </div>
   );
 };
