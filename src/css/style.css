@@ -45,12 +45,10 @@ input {
   @apply p-3 bg-slate-1 dark:bg-black-3 rounded-md !text-sm;
   @apply dark:text-white-2;
   @apply focus:outline-blue;
-  @apply capitalize;
 }
 
 h1 {
   @apply text-3xl md:text-5xl lg:text-6xl font-bold;
-  @apply capitalize;
 }
 
 h2 {
