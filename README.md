@@ -1,5 +1,5 @@
 > [!NOTE]
-> planned to rewrite the project entirely using Next.js. >The current PDF export function is not working well,considering better solutions ...
+> planned to rewrite the project entirely using Next.js. The current PDF export function is not working well,considering better solutions ...
 
 
 # Quickcv
