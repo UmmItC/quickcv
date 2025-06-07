@@ -26,8 +26,8 @@ const getDefaultData = (): CVData => ({
 
 const getDemoData = (): CVData => ({
   personalDetails: {
-    fullName: "UmmItC Leon",
-    designation: "Self-Taught Individual, Striving To Become A Professional Hacker. Also, A Technical Blogger.",
+    fullName: "Leon Kennedy",
+    designation: "Self-Taught Individual, Striving to become a professional hacker.",
     phone: "+852 12345678",
     emailAddress: "hi.job [at] ummit.dev",
     githubUsername: "UmmItC",
@@ -38,8 +38,8 @@ const getDemoData = (): CVData => ({
   },
   education: [
     {
-      institution: "College Student in Hong Kong",
-      qualification: "I'm Cyber Security Major",
+      institution: "City University of Hong Kong",
+      qualification: "BSc Cybersecurity",
       time: "Sep 2024 - Present",
     },
   ],
