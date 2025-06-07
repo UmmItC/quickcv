@@ -1,3 +1,9 @@
+:::note
+planned to rewrite the project entirely using Next.js. 
+
+The current PDF export function is not working well,considering better solutions ...
+:::
+
 # Quickcv
 
 Quickcv is a modern resume builder that allows users to create beautiful and professional resumes effortlessly. Built with Solid.js and UnoCSS, it offers a sleek interface and customizable templates.
