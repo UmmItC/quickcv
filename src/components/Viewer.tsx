@@ -265,13 +265,13 @@ const Viewer = () => {
         <div class="space-y-6">
           <About />
           <Education />
-          <WorkExp />
           <Certifications />
           <OSS />
         </div>
         
         <div class="space-y-6">
           <PersonalDetails />
+          <WorkExp />
           <Skills />
           <Interests />
         </div>
