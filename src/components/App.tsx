@@ -1,20 +1,22 @@
-import Navbar from "./navbar";
-import ModesBtn, { editorMode } from "./modeSwitcher";
-import Editor from "./editor";
-import Viewer from "./viewer";
+import { Show } from "solid-js";
+import Navbar from "./Navbar";
+import ModeSwitcher, { isEditorMode } from "./ModeSwitcher";
+import Editor from "./Editor";
+import Viewer from "./Viewer";
 
-function App() {
+const App = () => {
   return (
-    <div font-sans mx="2 md:5" xl:mx-auto xl:px-5 class="max-w-[1820px]">
+    <div class="font-sans mx-2 md:mx-5 xl:mx-auto xl:px-5 max-w-[1820px]">
       <Navbar />
-      <ModesBtn />
+      <ModeSwitcher />
 
-      {/* use this for html-to-image (svg) */}
-      <div id="svgWrapper" rounded-none md:grid justify-center>
-        {editorMode() ? <Editor /> : <Viewer />}
+      <div id="svgWrapper" class="rounded-none md:grid justify-center">
+        <Show when={isEditorMode()} fallback={<Viewer />}>
+          <Editor />
+        </Show>
       </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,13 +1,22 @@
-import "uno.css";
-import "./css/style.css";
-
+/* @refresh reload */
 import { render } from "solid-js/web";
+import "./css/style.css";
+import "virtual:uno.css";
+
 import App from "./components/App";
 
-// set site theme
+// Set theme
 const el = document.querySelector("html")!;
 el.className = localStorage.theme || "dark";
 
-// render app
 const root = document.getElementById("app");
-render(() => <App />, root);
+
+if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
+  throw new Error(
+    "Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?",
+  );
+}
+
+if (root) {
+  render(() => <App />, root);
+}

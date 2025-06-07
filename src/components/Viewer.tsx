@@ -1,11 +1,11 @@
-import { store } from "../store";
 import { Icon } from "@iconify-icon/solid";
+import { store } from "../store/index";
 
 const Name = () => (
   <div flex gap-3 class="[&_h1]:text-5xl justify-center" font-raleway>
-    <h1 class="!m-0">{store["full name"].split(" ")[0]}</h1>
+    <h1 class="!m-0">{store.personalDetails.fullName.split(" ")[0]}</h1>
     <h1 class="!m-0" font-normal text="dark:blue-4">
-      {store["full name"].split(" ")[1]}
+      {store.personalDetails.fullName.split(" ")[1]}
     </h1>
   </div>
 );
@@ -13,7 +13,7 @@ const Name = () => (
 const CareerObjective = () => (
   <div grid gap-7>
     {/*heading */}
-    <div font-bold text-2xl vertCentered>
+    <div font-bold text-2xl class="vertCentered">
       <Icon
         icon="mdi:target-arrow"
         width="25"
@@ -22,14 +22,14 @@ const CareerObjective = () => (
       About :
     </div>
 
-    <div>{store.profile}</div>
+    <div>{store.personalDetails.profile}</div>
   </div>
 );
 
 const Education = () => (
   <div grid gap-7>
     {/*heading */}
-    <div font-bold text-2xl vertCentered>
+    <div font-bold text-2xl class="vertCentered">
       <Icon
         icon="mdi:education-outline"
         width="25"
@@ -42,12 +42,12 @@ const Education = () => (
       {store.education.map((x) => (
         <div grid gap-3>
           <div flex justify-between>
-            <p pl-10 class="!m-0" capitalize underline>{x.institution}</p>
-            <p class="!m-0" bg="slate-1 dark:black-4" p-1 px-2 rounded-lg>
+            <p class="pl-10 !m-0 capitalize underline">{x.institution}</p>
+            <p class="!m-0 bg-slate-1 dark:bg-black-4 p-1 px-2 rounded-lg">
               {x.time}
             </p>
           </div>
-          <li capitalize pl-15>{x.qualification}</li>
+          <li class="capitalize pl-15">{x.qualification}</li>
         </div>
       ))}
     </div>
@@ -57,7 +57,7 @@ const Education = () => (
 const WorkExp = () => (
   <div grid gap-7>
     {/*heading */}
-    <div font-bold text-2xl vertCentered>
+    <div font-bold text-2xl class="vertCentered">
       <Icon
         icon="uil:suitcase"
         width="25"
@@ -67,15 +67,15 @@ const WorkExp = () => (
     </div>
 
     <div grid gap-3>
-      {store["work experience"].map((x) => (
+      {store.workExperience.map((x) => (
         <div grid gap-3>
           <div flex justify-between>
-            <p pl-10 class="!m-0" capitalize underline>{x.company}</p>
-            <p class="!m-0" bg="slate-1 dark:black-4" p-1 px-2 rounded-lg>
+            <p class="pl-10 !m-0 capitalize underline">{x.company}</p>
+            <p class="!m-0 bg-slate-1 dark:bg-black-4 p-1 px-2 rounded-lg">
               {x.time}
             </p>
           </div>
-          <li capitalize pl-15>{x.position}</li>
+          <li class="capitalize pl-15">{x.position}</li>
         </div>
       ))}
     </div>
@@ -85,7 +85,7 @@ const WorkExp = () => (
 const PersonalDetails = () => (
   <div grid gap-7>
     {/*heading */}
-    <div font-bold text-2xl vertCentered>
+    <div font-bold text-2xl class="vertCentered">
       <Icon
         icon="mdi:user-circle"
         width="25"
@@ -95,53 +95,53 @@ const PersonalDetails = () => (
     </div>
 
     {/* icons with text */}
-    <div pl-10 grid gap-3 class="[&_Icon]:dark:bg-transparent">
-      {store.address &&
+    <div class="pl-10 grid gap-3 [&_Icon]:dark:bg-transparent">
+      {store.personalDetails.address &&
         (
-          <div vertCentered>
-            <span font-semibold vertCentered>
+          <div class="vertCentered">
+            <span class="font-semibold vertCentered">
               <Icon icon="mingcute:location-line" width="20" />
               Address :
             </span>
-            {store.address}
+            {store.personalDetails.address}
           </div>
         )}
 
-      <div vertCentered>
-        <span font-semibold vertCentered>
+      <div class="vertCentered">
+        <span class="font-semibold vertCentered">
           <Icon icon="fluent:call-12-regular" width="20" />
           Phone :
         </span>
-        {store.phone}
+        {store.personalDetails.phone}
       </div>
 
-      <div vertCentered>
-        <span font-semibold vertCentered>
+      <div class="vertCentered">
+        <span class="font-semibold vertCentered">
           <Icon icon="mdi:email-variant" width="20" />
           Email :
         </span>
-        {store["email address"]}
+        {store.personalDetails.emailAddress}
       </div>
 
-      <div vertCentered>
-        <span font-semibold vertCentered>
+      <div class="vertCentered">
+        <span class="font-semibold vertCentered">
           <Icon icon="mdi:github" width="20" /> Github :
         </span>
-        @{store["github username"]}
+        @{store.personalDetails.githubUsername}
       </div>
 
-      <div vertCentered>
-        <span font-semibold vertCentered>
+      <div class="vertCentered">
+        <span class="font-semibold vertCentered">
           <Icon icon="logos:web-dev-icon" width="20" /> Website :
         </span>
-        {store.website}
+        {store.personalDetails.website}
       </div>
 
-      <div vertCentered>
-        <span font-semibold vertCentered>
+      <div class="vertCentered">
+        <span class="font-semibold vertCentered">
           <Icon icon="vscode-icons:file-type-gpg" width="20" /> GPG Key :
         </span>
-        {store["gpg key"]}
+        {store.personalDetails.gpgKey}
       </div>
     </div>
   </div>
@@ -157,7 +157,7 @@ const Skills_Interests = (
 ) => (
   <div grid gap-7 h-fit>
     {/*heading */}
-    <div font-bold text-2xl vertCentered>
+    <div font-bold text-2xl class="vertCentered">
       <Icon
         icon={props.icon.toLowerCase()}
         width="25"
@@ -168,13 +168,12 @@ const Skills_Interests = (
     </div>
 
     <div flex flex-wrap gap-3>
-      {store[props.store_name].map((x) => {
+      {(store[props.store_name as 'skills' | 'interests'] as string[]).map((x: string) => {
         const txttoArr = x.split(" ");
         const txt = txttoArr.slice(0, -1).join(" ");
         return (
           <span
-            class="capitalize vertCentered p-1 px-2 rounded-lg"
-            bg="slate-1 dark:black-3"
+            class="capitalize vertCentered p-1 px-2 rounded-lg bg-slate-1 dark:bg-black-3"
           >
             <Icon icon={txttoArr[txttoArr.length - 1].toLowerCase()}></Icon>
             {txt}
@@ -188,7 +187,7 @@ const Skills_Interests = (
 const OSS = () => (
   <div grid gap-7>
     {/*heading */}
-    <div font-bold text-2xl vertCentered>
+    <div font-bold text-2xl class="vertCentered">
       <Icon
         icon="tabler:brand-open-source"
         width="25"
@@ -202,26 +201,19 @@ const OSS = () => (
       <div grid>
         <div class="flex justify-between capitalize">
           <div
-            bg="slate-6 dark:black-4"
-            text="white-1 dark:white-3"
-            class="font-semibold p-1 px-5 rounded-t-lg"
+            class="bg-slate-6 dark:bg-black-4 text-white-1 dark:text-white-3 font-semibold p-1 px-5 rounded-t-lg"
           >
-            {x["project name"]}
+            {x.projectName}
           </div>
           ( {x.languages} )
         </div>
         <div
-          class="flex !m-0"
-          p-5
-          border="solid slate-6 dark:black-4"
-          rounded-b-lg
-          rounded-r-lg
+          class="flex !m-0 p-5 border-solid border-slate-6 dark:border-black-4 rounded-b-lg rounded-r-lg"
         >
           <Icon
             icon="material-symbols:line-end-arrow-rounded"
             width="20"
-            bg="dark:!transparent"
-            class='mt-[0.1rem] mr-2'
+            class='mt-[0.1rem] mr-2 dark:!bg-transparent'
           >
           </Icon>
           {x.description}
@@ -231,46 +223,48 @@ const OSS = () => (
   </div>
 );
 
-export default () => (
-  <div
-    class="w-[8.27in] rounded-lg p-10 bg-white-1 dark:bg-black-2 text-slate-6 dark:text-white-3 h-fit overflow-visible [&_*]:animate_smooth"
-    id="resumeResult"
-    animate_smooth
-  >
-    {/* header */}
-    <div border-solid border="1 slate-2 dark:slate-7" mb-10></div>
-    <Name />
-
-    <h2
-      class="capitalize text-center font-normal text-xl font-raleway"
-      border="slate-2 dark:slate-7"
+const Viewer = () => {
+  return (
+    <div
+      class="w-[8.27in] rounded-lg p-10 bg-white-1 dark:bg-black-2 text-slate-6 dark:text-white-3 h-fit overflow-visible animate_smooth"
+      id="resumeResult"
     >
-      {store.designation}
-    </h2>
-    <div border-solid border="1 slate-2 dark:slate-7" mt-10></div>
+      {/* header */}
+      <div class="border-solid border-1 border-slate-2 dark:border-slate-7 mb-10"></div>
+      <Name />
 
-    <div class="grid gap-10 mt-10 [&_Icon]:dark:bg-black-3">
-      <CareerObjective />
-      <Education />
-      <WorkExp />
-      <PersonalDetails />
+      <h2
+        class="capitalize text-center font-normal text-xl font-raleway border-slate-2 dark:border-slate-7"
+      >
+        {store.personalDetails.designation}
+      </h2>
+      <div class="border-solid border-1 border-slate-2 dark:border-slate-7 mt-10"></div>
 
-      <div grid grid-cols-2 gap-10>
-        <Skills_Interests
-          store_name="skills"
-          header="Technical Skills :"
-          icon="ph-code-bold"
-          iconColor="bg-orange-1 dark:text-orange-3"
-        />
-        <Skills_Interests
-          store_name="interests"
-          header="Interests & Hobbies :"
-          icon="typcn:point-of-interest"
-          iconColor="bg-slate-6 text-white-1 dark:text-blue-3"
-        />
+      <div class="grid gap-10 mt-10 [&_Icon]:dark:bg-black-3">
+        <CareerObjective />
+        <Education />
+        <WorkExp />
+        <PersonalDetails />
+
+        <div grid grid-cols-2 gap-10>
+          <Skills_Interests
+            store_name="skills"
+            header="Technical Skills :"
+            icon="ph-code-bold"
+            iconColor="bg-orange-1 dark:text-orange-3"
+          />
+          <Skills_Interests
+            store_name="interests"
+            header="Interests & Hobbies :"
+            icon="typcn:point-of-interest"
+            iconColor="bg-slate-6 text-white-1 dark:text-blue-3"
+          />
+        </div>
+
+        <OSS />
       </div>
-
-      <OSS />
     </div>
-  </div>
-);
+  );
+};
+
+export default Viewer;
