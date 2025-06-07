@@ -1,8 +1,6 @@
-:::note
-planned to rewrite the project entirely using Next.js. 
+> [!NOTE]
+> planned to rewrite the project entirely using Next.js. >The current PDF export function is not working well,considering better solutions ...
 
-The current PDF export function is not working well,considering better solutions ...
-:::
 
 # Quickcv
 
